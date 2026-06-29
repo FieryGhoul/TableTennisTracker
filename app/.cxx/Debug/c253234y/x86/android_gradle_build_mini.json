@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "C:\\Users\\tp732\\OneDrive\\Desktop\\TableTennisTracker\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\tp732\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\tp732\\OneDrive\\Desktop\\TableTennisTracker\\app\\.cxx\\Debug\\c253234y\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\tp732\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\tp732\\OneDrive\\Desktop\\TableTennisTracker\\app\\.cxx\\Debug\\c253234y\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "table_tennis_tracker::@6890427a1f51a3e7e1df": {
+      "artifactName": "table_tennis_tracker",
+      "abi": "x86",
+      "output": "C:\\Users\\tp732\\OneDrive\\Desktop\\TableTennisTracker\\app\\build\\intermediates\\cxx\\Debug\\c253234y\\obj\\x86\\libtable_tennis_tracker.so",
+      "runtimeFiles": []
+    }
+  }
+}

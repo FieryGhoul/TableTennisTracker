@@ -1,0 +1,11 @@
+# ninja log v5
+0	1357	8044220999742369	CMakeFiles/table_tennis_tracker.dir/native-lib.cpp.o	5e80d2b462e3d199
+1366	1631	8044221002609881	C:/Users/tp732/OneDrive/Desktop/TableTennisTracker/app/build/intermediates/cxx/Debug/c253234y/obj/arm64-v8a/libtable_tennis_tracker.so	9492a712648b1d15
+36	1652	8044233882414504	CMakeFiles/table_tennis_tracker.dir/native-lib.cpp.o	5e80d2b462e3d199
+1652	1842	8044233884405190	C:/Users/tp732/OneDrive/Desktop/TableTennisTracker/app/build/intermediates/cxx/Debug/c253234y/obj/arm64-v8a/libtable_tennis_tracker.so	9492a712648b1d15
+4	1591	8044240919240917	CMakeFiles/table_tennis_tracker.dir/native-lib.cpp.o	5e80d2b462e3d199
+1592	2050	8044240923684132	C:/Users/tp732/OneDrive/Desktop/TableTennisTracker/app/build/intermediates/cxx/Debug/c253234y/obj/arm64-v8a/libtable_tennis_tracker.so	9492a712648b1d15
+5	1038	8044246908097694	CMakeFiles/table_tennis_tracker.dir/native-lib.cpp.o	5e80d2b462e3d199
+1038	1228	8044246910034432	C:/Users/tp732/OneDrive/Desktop/TableTennisTracker/app/build/intermediates/cxx/Debug/c253234y/obj/arm64-v8a/libtable_tennis_tracker.so	9492a712648b1d15
+4	1204	8044249728619275	CMakeFiles/table_tennis_tracker.dir/native-lib.cpp.o	5e80d2b462e3d199
+1205	1360	8044249730348431	C:/Users/tp732/OneDrive/Desktop/TableTennisTracker/app/build/intermediates/cxx/Debug/c253234y/obj/arm64-v8a/libtable_tennis_tracker.so	9492a712648b1d15

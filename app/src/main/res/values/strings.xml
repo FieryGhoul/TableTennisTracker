@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Table Tennis Tracker</string>
+    <string name="control_title">Camera Controls</string>
+    <string name="ball_profile_title">Ball Profile</string>
+    <string name="profile_auto">Auto</string>
+    <string name="profile_orange">Orange</string>
+    <string name="profile_white">White</string>
+    <string name="status_waiting">Waiting for camera...</string>
+    <string name="status_no_ball">Scanning for ball...</string>
+    <string name="status_ball_found">Ball locked</string>
+    <string name="torch_label">Torch</string>
+    <string name="exposure_default">Exposure: 0.0 EV</string>
+    <string name="zoom_default">Zoom: 1.0x</string>
+    <string name="manual_exposure_label">Manual ISO + Shutter</string>
+    <string name="iso_default">ISO: Auto</string>
+    <string name="shutter_default">Shutter: Auto</string>
+    <string name="manual_focus_label">Manual Focus Pull</string>
+    <string name="focus_default">Focus: Auto</string>
+    <string name="manual_white_balance_label">Manual Warmth / White Balance</string>
+    <string name="warmth_default">Warmth: Auto</string>
+    <string name="reset_pro_label">Reset Auto Look</string>
+</resources>

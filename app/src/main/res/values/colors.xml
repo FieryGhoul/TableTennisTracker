@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_dark">#10161F</color>
+    <color name="control_surface">#CC17212D</color>
+    <color name="overlay_green">#4CFF7A</color>
+    <color name="text_muted">#BCC6D3</color>
+</resources>

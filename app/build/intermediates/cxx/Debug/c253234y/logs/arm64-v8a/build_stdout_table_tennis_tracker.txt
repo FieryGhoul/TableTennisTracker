@@ -1,0 +1,3 @@
+ninja: Entering directory `C:\Users\tp732\OneDrive\Desktop\TableTennisTracker\app\.cxx\Debug\c253234y\arm64-v8a'
+[1/2] Building CXX object CMakeFiles/table_tennis_tracker.dir/native-lib.cpp.o
+[2/2] Linking CXX shared library C:\Users\tp732\OneDrive\Desktop\TableTennisTracker\app\build\intermediates\cxx\Debug\c253234y\obj\arm64-v8a\libtable_tennis_tracker.so
