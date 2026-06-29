@@ -3252,6 +3252,8 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id diagnosticCard
+id diagnosticText
 id dialog_button
 id dimensions
 id direct
@@ -3480,6 +3482,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id refreshDiagnosticsButton
 id report_drawn
 id resetProButton
 id reverseSawtooth
@@ -3869,6 +3872,9 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string camera_diagnostics_loading
+string camera_diagnostics_refresh
+string camera_diagnostics_title
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3882,6 +3888,11 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string focus_default
 string hide_bottom_view_on_scroll_behavior
+string high_speed_fps_default
+string high_speed_mode_label
+string high_speed_record_start
+string high_speed_record_stop
+string high_speed_slow_motion_label
 string icon_content_description
 string iso_default
 string item_view_role_description

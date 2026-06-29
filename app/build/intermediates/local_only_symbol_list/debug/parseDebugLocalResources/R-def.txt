@@ -8,6 +8,8 @@ drawable status_chip_bg
 id ballProfileGroup
 id cameraContainer
 id controlCard
+id diagnosticCard
+id diagnosticText
 id exposureLabel
 id exposureSeekBar
 id focusLabel
@@ -22,6 +24,7 @@ id previewView
 id profileAutoRadio
 id profileOrangeRadio
 id profileWhiteRadio
+id refreshDiagnosticsButton
 id resetProButton
 id shutterLabel
 id shutterSeekBar
@@ -34,9 +37,17 @@ id zoomSeekBar
 layout activity_main
 string app_name
 string ball_profile_title
+string camera_diagnostics_loading
+string camera_diagnostics_refresh
+string camera_diagnostics_title
 string control_title
 string exposure_default
 string focus_default
+string high_speed_fps_default
+string high_speed_mode_label
+string high_speed_record_start
+string high_speed_record_stop
+string high_speed_slow_motion_label
 string iso_default
 string manual_exposure_label
 string manual_focus_label

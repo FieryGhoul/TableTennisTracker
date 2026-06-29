@@ -27,7 +27,10 @@
     "variantName": "debug",
     "isDebuggableEnabled": true,
     "validAbiList": [
-      "arm64-v8a"
+      "armeabi-v7a",
+      "arm64-v8a",
+      "x86",
+      "x86_64"
     ],
     "buildTargetSet": [],
     "implicitBuildTargetSet": [],
@@ -140,7 +143,6 @@
         "rootBuildGradleFolder": "C:\\Users\\tp732\\OneDrive\\Desktop\\TableTennisTracker",
         "sdkFolder": "C:\\Users\\tp732\\AppData\\Local\\Android\\Sdk",
         "isBuildOnlyTargetAbiEnabled": true,
-        "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },

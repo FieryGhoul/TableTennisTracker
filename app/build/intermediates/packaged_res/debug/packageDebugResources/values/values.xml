@@ -6,9 +6,17 @@
     <color name="text_muted">#BCC6D3</color>
     <string name="app_name">Table Tennis Tracker</string>
     <string name="ball_profile_title">Ball Profile</string>
+    <string name="camera_diagnostics_loading">Reading Camera2 capabilities...</string>
+    <string name="camera_diagnostics_refresh">Refresh</string>
+    <string name="camera_diagnostics_title">Camera Diagnostics</string>
     <string name="control_title">Camera Controls</string>
     <string name="exposure_default">Exposure: 0.0 EV</string>
     <string name="focus_default">Focus: Auto</string>
+    <string name="high_speed_fps_default">High-speed FPS: Checking support...</string>
+    <string name="high_speed_mode_label">High-Speed Video Mode</string>
+    <string name="high_speed_record_start">Start High-Speed Recording</string>
+    <string name="high_speed_record_stop">Stop Recording</string>
+    <string name="high_speed_slow_motion_label">Save as slow motion (30 FPS playback)</string>
     <string name="iso_default">ISO: Auto</string>
     <string name="manual_exposure_label">Manual ISO + Shutter</string>
     <string name="manual_focus_label">Manual Focus Pull</string>

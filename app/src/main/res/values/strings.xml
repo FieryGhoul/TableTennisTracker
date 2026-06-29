@@ -20,4 +20,12 @@
     <string name="manual_white_balance_label">Manual Warmth / White Balance</string>
     <string name="warmth_default">Warmth: Auto</string>
     <string name="reset_pro_label">Reset Auto Look</string>
+    <string name="high_speed_mode_label">High-Speed Video Mode</string>
+    <string name="high_speed_fps_default">High-speed FPS: Checking support...</string>
+    <string name="high_speed_slow_motion_label">Save as slow motion (30 FPS playback)</string>
+    <string name="high_speed_record_start">Start High-Speed Recording</string>
+    <string name="high_speed_record_stop">Stop Recording</string>
+    <string name="camera_diagnostics_title">Camera Diagnostics</string>
+    <string name="camera_diagnostics_refresh">Refresh</string>
+    <string name="camera_diagnostics_loading">Reading Camera2 capabilities...</string>
 </resources>

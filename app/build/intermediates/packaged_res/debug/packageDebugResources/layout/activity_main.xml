@@ -5,6 +5,70 @@
     android:layout_height="match_parent"
     android:background="@color/background_dark">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/diagnosticCard"
+        android:layout_width="0dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        app:cardBackgroundColor="@color/control_surface"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/camera_diagnostics_title"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/refreshDiagnosticsButton"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="0dp"
+                    android:text="@string/camera_diagnostics_refresh" />
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <TextView
+                    android:id="@+id/diagnosticText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/camera_diagnostics_loading"
+                    android:textColor="@color/text_muted"
+                    android:textIsSelectable="true"
+                    android:textSize="12sp" />
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
     <FrameLayout
         android:id="@+id/cameraContainer"
         android:layout_width="0dp"
@@ -13,7 +77,7 @@
         app:layout_constraintBottom_toTopOf="@id/controlCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/diagnosticCard">
 
         <androidx.camera.view.PreviewView
             android:id="@+id/previewView"
@@ -43,7 +107,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/controlCard"
         android:layout_width="0dp"
-        android:layout_height="340dp"
+        android:layout_height="320dp"
         android:layout_margin="12dp"
         app:cardBackgroundColor="@color/control_surface"
         app:cardCornerRadius="20dp"

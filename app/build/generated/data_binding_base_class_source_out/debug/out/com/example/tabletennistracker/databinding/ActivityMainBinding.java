@@ -38,6 +38,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final MaterialCardView controlCard;
 
   @NonNull
+  public final MaterialCardView diagnosticCard;
+
+  @NonNull
+  public final TextView diagnosticText;
+
+  @NonNull
   public final TextView exposureLabel;
 
   @NonNull
@@ -80,6 +86,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final RadioButton profileWhiteRadio;
 
   @NonNull
+  public final MaterialButton refreshDiagnosticsButton;
+
+  @NonNull
   public final MaterialButton resetProButton;
 
   @NonNull
@@ -108,21 +117,24 @@ public final class ActivityMainBinding implements ViewBinding {
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
       @NonNull RadioGroup ballProfileGroup, @NonNull FrameLayout cameraContainer,
-      @NonNull MaterialCardView controlCard, @NonNull TextView exposureLabel,
+      @NonNull MaterialCardView controlCard, @NonNull MaterialCardView diagnosticCard,
+      @NonNull TextView diagnosticText, @NonNull TextView exposureLabel,
       @NonNull SeekBar exposureSeekBar, @NonNull TextView focusLabel, @NonNull SeekBar focusSeekBar,
       @NonNull TextView isoLabel, @NonNull SeekBar isoSeekBar,
       @NonNull MaterialSwitch manualExposureSwitch, @NonNull MaterialSwitch manualFocusSwitch,
       @NonNull MaterialSwitch manualWhiteBalanceSwitch, @NonNull BallTrackingOverlay overlayView,
       @NonNull PreviewView previewView, @NonNull RadioButton profileAutoRadio,
       @NonNull RadioButton profileOrangeRadio, @NonNull RadioButton profileWhiteRadio,
-      @NonNull MaterialButton resetProButton, @NonNull TextView shutterLabel,
-      @NonNull SeekBar shutterSeekBar, @NonNull TextView statusText,
+      @NonNull MaterialButton refreshDiagnosticsButton, @NonNull MaterialButton resetProButton,
+      @NonNull TextView shutterLabel, @NonNull SeekBar shutterSeekBar, @NonNull TextView statusText,
       @NonNull MaterialSwitch torchSwitch, @NonNull TextView warmthLabel,
       @NonNull SeekBar warmthSeekBar, @NonNull TextView zoomLabel, @NonNull SeekBar zoomSeekBar) {
     this.rootView = rootView;
     this.ballProfileGroup = ballProfileGroup;
     this.cameraContainer = cameraContainer;
     this.controlCard = controlCard;
+    this.diagnosticCard = diagnosticCard;
+    this.diagnosticText = diagnosticText;
     this.exposureLabel = exposureLabel;
     this.exposureSeekBar = exposureSeekBar;
     this.focusLabel = focusLabel;
@@ -137,6 +149,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.profileAutoRadio = profileAutoRadio;
     this.profileOrangeRadio = profileOrangeRadio;
     this.profileWhiteRadio = profileWhiteRadio;
+    this.refreshDiagnosticsButton = refreshDiagnosticsButton;
     this.resetProButton = resetProButton;
     this.shutterLabel = shutterLabel;
     this.shutterSeekBar = shutterSeekBar;
@@ -190,6 +203,18 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.controlCard;
       MaterialCardView controlCard = ViewBindings.findChildViewById(rootView, id);
       if (controlCard == null) {
+        break missingId;
+      }
+
+      id = R.id.diagnosticCard;
+      MaterialCardView diagnosticCard = ViewBindings.findChildViewById(rootView, id);
+      if (diagnosticCard == null) {
+        break missingId;
+      }
+
+      id = R.id.diagnosticText;
+      TextView diagnosticText = ViewBindings.findChildViewById(rootView, id);
+      if (diagnosticText == null) {
         break missingId;
       }
 
@@ -277,6 +302,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.refreshDiagnosticsButton;
+      MaterialButton refreshDiagnosticsButton = ViewBindings.findChildViewById(rootView, id);
+      if (refreshDiagnosticsButton == null) {
+        break missingId;
+      }
+
       id = R.id.resetProButton;
       MaterialButton resetProButton = ViewBindings.findChildViewById(rootView, id);
       if (resetProButton == null) {
@@ -332,11 +363,11 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, ballProfileGroup, cameraContainer,
-          controlCard, exposureLabel, exposureSeekBar, focusLabel, focusSeekBar, isoLabel,
-          isoSeekBar, manualExposureSwitch, manualFocusSwitch, manualWhiteBalanceSwitch,
-          overlayView, previewView, profileAutoRadio, profileOrangeRadio, profileWhiteRadio,
-          resetProButton, shutterLabel, shutterSeekBar, statusText, torchSwitch, warmthLabel,
-          warmthSeekBar, zoomLabel, zoomSeekBar);
+          controlCard, diagnosticCard, diagnosticText, exposureLabel, exposureSeekBar, focusLabel,
+          focusSeekBar, isoLabel, isoSeekBar, manualExposureSwitch, manualFocusSwitch,
+          manualWhiteBalanceSwitch, overlayView, previewView, profileAutoRadio, profileOrangeRadio,
+          profileWhiteRadio, refreshDiagnosticsButton, resetProButton, shutterLabel, shutterSeekBar,
+          statusText, torchSwitch, warmthLabel, warmthSeekBar, zoomLabel, zoomSeekBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
