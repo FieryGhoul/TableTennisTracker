@@ -1,0 +1,6 @@
+# ninja log v5
+3	1850	8044294146719958	CMakeFiles/table_tennis_tracker.dir/native-lib.cpp.o	95d86f8fac9a235d
+1864	2053	8044294149188892	C:/Users/tp732/OneDrive/Desktop/TableTennisTracker/app/build/intermediates/cxx/Debug/c253234y/obj/x86/libtable_tennis_tracker.so	8287880ac52445da
+0	22	0	clean	3c339639ee29a974
+5	1044	8044294438498156	CMakeFiles/table_tennis_tracker.dir/native-lib.cpp.o	95d86f8fac9a235d
+1045	1173	8044294439927434	C:/Users/tp732/OneDrive/Desktop/TableTennisTracker/app/build/intermediates/cxx/Debug/c253234y/obj/x86/libtable_tennis_tracker.so	8287880ac52445da

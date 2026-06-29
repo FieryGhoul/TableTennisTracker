@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\Users\tp732\OneDrive\Desktop\TableTennisTracker\app\.cxx\Debug\c253234y\x86'
+ninja: no work to do.
