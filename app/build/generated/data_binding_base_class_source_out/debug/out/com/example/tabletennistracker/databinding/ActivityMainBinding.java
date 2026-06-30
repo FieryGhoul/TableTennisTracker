@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.camera.view.PreviewView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.tabletennistracker.BallTrackingOverlay;
@@ -32,16 +34,28 @@ public final class ActivityMainBinding implements ViewBinding {
   public final RadioGroup ballProfileGroup;
 
   @NonNull
+  public final TextView ballProfileTitle;
+
+  @NonNull
   public final FrameLayout cameraContainer;
 
   @NonNull
   public final MaterialCardView controlCard;
 
   @NonNull
+  public final TextView controlTitleText;
+
+  @NonNull
   public final MaterialCardView diagnosticCard;
 
   @NonNull
-  public final TextView diagnosticText;
+  public final LinearLayout diagnosticContent;
+
+  @NonNull
+  public final NestedScrollView diagnosticScroll;
+
+  @NonNull
+  public final TextView diagnosticSummaryText;
 
   @NonNull
   public final TextView exposureLabel;
@@ -101,6 +115,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView statusText;
 
   @NonNull
+  public final MaterialButton toggleControlsButton;
+
+  @NonNull
+  public final MaterialButton toggleDiagnosticsButton;
+
+  @NonNull
   public final MaterialSwitch torchSwitch;
 
   @NonNull
@@ -116,9 +136,11 @@ public final class ActivityMainBinding implements ViewBinding {
   public final SeekBar zoomSeekBar;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull RadioGroup ballProfileGroup, @NonNull FrameLayout cameraContainer,
-      @NonNull MaterialCardView controlCard, @NonNull MaterialCardView diagnosticCard,
-      @NonNull TextView diagnosticText, @NonNull TextView exposureLabel,
+      @NonNull RadioGroup ballProfileGroup, @NonNull TextView ballProfileTitle,
+      @NonNull FrameLayout cameraContainer, @NonNull MaterialCardView controlCard,
+      @NonNull TextView controlTitleText, @NonNull MaterialCardView diagnosticCard,
+      @NonNull LinearLayout diagnosticContent, @NonNull NestedScrollView diagnosticScroll,
+      @NonNull TextView diagnosticSummaryText, @NonNull TextView exposureLabel,
       @NonNull SeekBar exposureSeekBar, @NonNull TextView focusLabel, @NonNull SeekBar focusSeekBar,
       @NonNull TextView isoLabel, @NonNull SeekBar isoSeekBar,
       @NonNull MaterialSwitch manualExposureSwitch, @NonNull MaterialSwitch manualFocusSwitch,
@@ -127,14 +149,19 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull RadioButton profileOrangeRadio, @NonNull RadioButton profileWhiteRadio,
       @NonNull MaterialButton refreshDiagnosticsButton, @NonNull MaterialButton resetProButton,
       @NonNull TextView shutterLabel, @NonNull SeekBar shutterSeekBar, @NonNull TextView statusText,
+      @NonNull MaterialButton toggleControlsButton, @NonNull MaterialButton toggleDiagnosticsButton,
       @NonNull MaterialSwitch torchSwitch, @NonNull TextView warmthLabel,
       @NonNull SeekBar warmthSeekBar, @NonNull TextView zoomLabel, @NonNull SeekBar zoomSeekBar) {
     this.rootView = rootView;
     this.ballProfileGroup = ballProfileGroup;
+    this.ballProfileTitle = ballProfileTitle;
     this.cameraContainer = cameraContainer;
     this.controlCard = controlCard;
+    this.controlTitleText = controlTitleText;
     this.diagnosticCard = diagnosticCard;
-    this.diagnosticText = diagnosticText;
+    this.diagnosticContent = diagnosticContent;
+    this.diagnosticScroll = diagnosticScroll;
+    this.diagnosticSummaryText = diagnosticSummaryText;
     this.exposureLabel = exposureLabel;
     this.exposureSeekBar = exposureSeekBar;
     this.focusLabel = focusLabel;
@@ -154,6 +181,8 @@ public final class ActivityMainBinding implements ViewBinding {
     this.shutterLabel = shutterLabel;
     this.shutterSeekBar = shutterSeekBar;
     this.statusText = statusText;
+    this.toggleControlsButton = toggleControlsButton;
+    this.toggleDiagnosticsButton = toggleDiagnosticsButton;
     this.torchSwitch = torchSwitch;
     this.warmthLabel = warmthLabel;
     this.warmthSeekBar = warmthSeekBar;
@@ -194,6 +223,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ballProfileTitle;
+      TextView ballProfileTitle = ViewBindings.findChildViewById(rootView, id);
+      if (ballProfileTitle == null) {
+        break missingId;
+      }
+
       id = R.id.cameraContainer;
       FrameLayout cameraContainer = ViewBindings.findChildViewById(rootView, id);
       if (cameraContainer == null) {
@@ -206,15 +241,33 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.controlTitleText;
+      TextView controlTitleText = ViewBindings.findChildViewById(rootView, id);
+      if (controlTitleText == null) {
+        break missingId;
+      }
+
       id = R.id.diagnosticCard;
       MaterialCardView diagnosticCard = ViewBindings.findChildViewById(rootView, id);
       if (diagnosticCard == null) {
         break missingId;
       }
 
-      id = R.id.diagnosticText;
-      TextView diagnosticText = ViewBindings.findChildViewById(rootView, id);
-      if (diagnosticText == null) {
+      id = R.id.diagnosticContent;
+      LinearLayout diagnosticContent = ViewBindings.findChildViewById(rootView, id);
+      if (diagnosticContent == null) {
+        break missingId;
+      }
+
+      id = R.id.diagnosticScroll;
+      NestedScrollView diagnosticScroll = ViewBindings.findChildViewById(rootView, id);
+      if (diagnosticScroll == null) {
+        break missingId;
+      }
+
+      id = R.id.diagnosticSummaryText;
+      TextView diagnosticSummaryText = ViewBindings.findChildViewById(rootView, id);
+      if (diagnosticSummaryText == null) {
         break missingId;
       }
 
@@ -332,6 +385,18 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.toggleControlsButton;
+      MaterialButton toggleControlsButton = ViewBindings.findChildViewById(rootView, id);
+      if (toggleControlsButton == null) {
+        break missingId;
+      }
+
+      id = R.id.toggleDiagnosticsButton;
+      MaterialButton toggleDiagnosticsButton = ViewBindings.findChildViewById(rootView, id);
+      if (toggleDiagnosticsButton == null) {
+        break missingId;
+      }
+
       id = R.id.torchSwitch;
       MaterialSwitch torchSwitch = ViewBindings.findChildViewById(rootView, id);
       if (torchSwitch == null) {
@@ -362,12 +427,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, ballProfileGroup, cameraContainer,
-          controlCard, diagnosticCard, diagnosticText, exposureLabel, exposureSeekBar, focusLabel,
-          focusSeekBar, isoLabel, isoSeekBar, manualExposureSwitch, manualFocusSwitch,
-          manualWhiteBalanceSwitch, overlayView, previewView, profileAutoRadio, profileOrangeRadio,
-          profileWhiteRadio, refreshDiagnosticsButton, resetProButton, shutterLabel, shutterSeekBar,
-          statusText, torchSwitch, warmthLabel, warmthSeekBar, zoomLabel, zoomSeekBar);
+      return new ActivityMainBinding((ConstraintLayout) rootView, ballProfileGroup,
+          ballProfileTitle, cameraContainer, controlCard, controlTitleText, diagnosticCard,
+          diagnosticContent, diagnosticScroll, diagnosticSummaryText, exposureLabel,
+          exposureSeekBar, focusLabel, focusSeekBar, isoLabel, isoSeekBar, manualExposureSwitch,
+          manualFocusSwitch, manualWhiteBalanceSwitch, overlayView, previewView, profileAutoRadio,
+          profileOrangeRadio, profileWhiteRadio, refreshDiagnosticsButton, resetProButton,
+          shutterLabel, shutterSeekBar, statusText, toggleControlsButton, toggleDiagnosticsButton,
+          torchSwitch, warmthLabel, warmthSeekBar, zoomLabel, zoomSeekBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

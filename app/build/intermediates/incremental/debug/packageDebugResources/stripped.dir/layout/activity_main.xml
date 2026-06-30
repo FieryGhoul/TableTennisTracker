@@ -8,7 +8,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/diagnosticCard"
         android:layout_width="0dp"
-        android:layout_height="224dp"
+        android:layout_height="332dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
@@ -47,24 +47,38 @@
                     android:layout_height="wrap_content"
                     android:minWidth="0dp"
                     android:text="@string/camera_diagnostics_refresh" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/toggleDiagnosticsButton"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="0dp"
+                    android:text="@string/camera_diagnostics_collapse" />
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/diagnosticSummaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/camera_diagnostics_loading"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp" />
+
             <androidx.core.widget.NestedScrollView
+                android:id="@+id/diagnosticScroll"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:fillViewport="true">
 
-                <TextView
-                    android:id="@+id/diagnosticText"
+                <LinearLayout
+                    android:id="@+id/diagnosticContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="monospace"
-                    android:text="@string/camera_diagnostics_loading"
-                    android:textColor="@color/text_muted"
-                    android:textIsSelectable="true"
-                    android:textSize="12sp" />
+                    android:orientation="vertical" />
             </androidx.core.widget.NestedScrollView>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -128,6 +142,7 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/controlTitleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/control_title"
@@ -135,7 +150,17 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/toggleControlsButton"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:minWidth="0dp"
+                    android:text="@string/camera_controls_collapse" />
+
                 <TextView
+                    android:id="@+id/ballProfileTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"

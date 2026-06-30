@@ -28,4 +28,9 @@
     <string name="camera_diagnostics_title">Camera Diagnostics</string>
     <string name="camera_diagnostics_refresh">Refresh</string>
     <string name="camera_diagnostics_loading">Reading Camera2 capabilities...</string>
+    <string name="camera_diagnostics_subtitle">Direct Camera2 report: capabilities, resolutions, FPS, sensor, focus, stabilization, and high-speed support.</string>
+    <string name="camera_diagnostics_expand">Expand</string>
+    <string name="camera_diagnostics_collapse">Collapse</string>
+    <string name="camera_controls_expand">Expand Controls</string>
+    <string name="camera_controls_collapse">Collapse Controls</string>
 </resources>

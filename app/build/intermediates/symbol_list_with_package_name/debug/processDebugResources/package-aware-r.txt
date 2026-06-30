@@ -3187,6 +3187,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id ballProfileGroup
+id ballProfileTitle
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3232,6 +3233,7 @@ id contentPanel
 id contiguous
 id continuousVelocity
 id controlCard
+id controlTitleText
 id coordinator
 id cos
 id counterclockwise
@@ -3253,7 +3255,9 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id diagnosticCard
-id diagnosticText
+id diagnosticContent
+id diagnosticScroll
+id diagnosticSummaryText
 id dialog_button
 id dimensions
 id direct
@@ -3591,6 +3595,8 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toggleControlsButton
+id toggleDiagnosticsButton
 id top
 id topPanel
 id torchSwitch
@@ -3872,8 +3878,13 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string camera_controls_collapse
+string camera_controls_expand
+string camera_diagnostics_collapse
+string camera_diagnostics_expand
 string camera_diagnostics_loading
 string camera_diagnostics_refresh
+string camera_diagnostics_subtitle
 string camera_diagnostics_title
 string character_counter_content_description
 string character_counter_overflowed_content_description
