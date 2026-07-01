@@ -1,14 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-debug-38:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-main-40:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-debug-33:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-main-35:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-debug-38:\\drawable_status_chip_bg.xml.flat",
-        "source": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-main-40:\\drawable\\status_chip_bg.xml"
+        "merged": "com.example.tabletennistracker.app-debug-33:/layout_activity_main.xml.flat",
+        "source": "com.example.tabletennistracker.app-main-35:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.tabletennistracker.app-debug-38:/layout_activity_main.xml.flat",
-        "source": "com.example.tabletennistracker.app-main-40:/layout/activity_main.xml"
+        "merged": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-debug-33:\\drawable_status_chip_bg.xml.flat",
+        "source": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-main-35:\\drawable\\status_chip_bg.xml"
     }
 ]

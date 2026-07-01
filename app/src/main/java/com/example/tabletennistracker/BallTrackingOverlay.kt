@@ -14,14 +14,19 @@ class BallTrackingOverlay @JvmOverloads constructor(
     attrs: AttributeSet? = null,
 ) : View(context, attrs) {
 
-    private val boxPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val selectedPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.rgb(76, 255, 122)
         style = Paint.Style.STROKE
         strokeWidth = 8f
     }
 
-    private val centerPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val selectedCenterPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.WHITE
+        style = Paint.Style.FILL
+    }
+
+    private val candidatePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.argb(220, 255, 198, 59)
         style = Paint.Style.FILL
     }
 
@@ -30,31 +35,89 @@ class BallTrackingOverlay @JvmOverloads constructor(
         textSize = 34f
     }
 
-    private var trackerResult: TrackerResult? = null
+    private val candidateTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.rgb(255, 226, 150)
+        textSize = 26f
+    }
 
-    fun updateResult(result: TrackerResult?) {
-        trackerResult = result
+    private val testPointPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.CYAN
+        style = Paint.Style.FILL
+    }
+
+    private var frameResult: TrackingFrameResult? = null
+    private var coordinateMapper: CameraCoordinateMapper? = null
+    private var showCandidateDots = false
+
+    fun updateFrameResult(result: TrackingFrameResult?) {
+        frameResult = result
+        invalidate()
+    }
+
+    fun updateCoordinateMapper(mapper: CameraCoordinateMapper?) {
+        coordinateMapper = mapper
+        invalidate()
+    }
+
+    fun setShowCandidateDots(show: Boolean) {
+        showCandidateDots = show
         invalidate()
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        val result = trackerResult ?: return
-        val mapped = RectF(
-            result.normalizedBox.left * width,
-            result.normalizedBox.top * height,
-            result.normalizedBox.right * width,
-            result.normalizedBox.bottom * height,
-        )
+        val mapper = coordinateMapper ?: return
+        if (!mapper.hasConfig()) {
+            return
+        }
 
-        canvas.drawRect(mapped, boxPaint)
-        canvas.drawCircle(mapped.centerX(), mapped.centerY(), max(6f, mapped.width() * 0.06f), centerPaint)
+        if (showCandidateDots) {
+            drawCenterTestPoint(canvas, mapper)
+        }
+
+        val result = frameResult ?: return
+        if (showCandidateDots) {
+            result.candidates.forEachIndexed { index, candidate ->
+                val mappedRect = mapper.mapRect(candidate.imageRect)
+                val center = mapper.mapPoint(candidate.imageRect.centerX(), candidate.imageRect.centerY())
+                canvas.drawCircle(center.x, center.y, 8f, candidatePaint)
+                canvas.drawText(
+                    "#${index + 1} ${candidate.score.format2()}",
+                    mappedRect.left,
+                    max(28f, mappedRect.top - 12f),
+                    candidateTextPaint,
+                )
+            }
+        }
+
+        val trackerResult = result.trackerResult ?: return
+        val mappedRect = mapper.mapRect(trackerResult.imageRect)
+        val mappedCenter = mapper.mapPoint(trackerResult.centerX, trackerResult.centerY)
+        canvas.drawRect(mappedRect, selectedPaint)
+        canvas.drawCircle(mappedCenter.x, mappedCenter.y, 9f, selectedCenterPaint)
         canvas.drawText(
-            "Ball ${(result.confidence * 100f).toInt()}%",
-            mapped.left,
-            max(36f, mapped.top - 18f),
+            "Ball ${(trackerResult.confidence * 100f).toInt()}%",
+            mappedRect.left,
+            max(36f, mappedRect.top - 18f),
             textPaint,
         )
     }
+
+    private fun drawCenterTestPoint(canvas: Canvas, mapper: CameraCoordinateMapper) {
+        val config = mapper.currentConfig() ?: return
+        val mappedCenter = mapper.mapPoint(
+            config.imageWidth * 0.5f,
+            config.imageHeight * 0.5f,
+        )
+        canvas.drawCircle(mappedCenter.x, mappedCenter.y, 10f, testPointPaint)
+        canvas.drawText(
+            "Image center",
+            mappedCenter.x + 14f,
+            max(28f, mappedCenter.y - 14f),
+            candidateTextPaint,
+        )
+    }
+
+    private fun Float.format2(): String = String.format("%.2f", this)
 }

@@ -1,10 +1,10 @@
 [
     {
-        "merged": "com.example.tabletennistracker.app-mergeDebugResources-37:/layout/activity_main.xml",
-        "source": "com.example.tabletennistracker.app-main-40:/layout/activity_main.xml"
+        "merged": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-mergeDebugResources-32:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-main-35:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-mergeDebugResources-37:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\tp732\\.gradle\\daemon\\8.6\\com.example.tabletennistracker.app-main-40:\\layout\\activity_main.xml"
+        "merged": "com.example.tabletennistracker.app-mergeDebugResources-32:/layout/activity_main.xml",
+        "source": "com.example.tabletennistracker.app-main-35:/layout/activity_main.xml"
     }
 ]

@@ -2,11 +2,16 @@
 <resources>
     <string name="app_name">Table Tennis Tracker</string>
     <string name="control_title">Camera Controls</string>
+    <string name="camera_mode_title">Camera Mode</string>
+    <string name="camera_mode_stable">Stable Tracking Mode</string>
+    <string name="camera_mode_high_speed">High-Speed Preview Test Mode</string>
     <string name="ball_profile_title">Ball Profile</string>
     <string name="profile_auto">Auto</string>
     <string name="profile_orange">Orange</string>
     <string name="profile_white">White</string>
+    <string name="show_candidates_label">Show Candidate Dots</string>
     <string name="status_waiting">Waiting for camera...</string>
+    <string name="debug_waiting">Camera debug: waiting for session...</string>
     <string name="status_no_ball">Scanning for ball...</string>
     <string name="status_ball_found">Ball locked</string>
     <string name="torch_label">Torch</string>

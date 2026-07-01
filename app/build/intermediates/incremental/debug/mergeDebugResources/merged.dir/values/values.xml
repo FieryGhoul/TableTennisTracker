@@ -228,10 +228,6 @@
     <attr format="dimension" name="height"/>
     <attr format="reference" name="hideMotionSpec"/>
     <attr format="boolean" name="hideNavigationIcon"/>
-    <attr format="enum" name="implementationMode">
-        <enum name="performance" value="0"/>
-        <enum name="compatible" value="1"/>
-    </attr>
     <attr format="boolean" name="isLightTheme"/>
     <attr format="boolean" name="isMaterial3DynamicColorApplied"/>
     <attr format="boolean" name="isMaterial3Theme"/>
@@ -510,14 +506,6 @@
     <attr format="integer" name="quantizeMotionSteps"/>
     <attr format="reference" name="recyclerViewStyle"/>
     <attr format="color" name="rippleColor"/>
-    <attr format="enum" name="scaleType">
-        <enum name="fillStart" value="0"/>
-        <enum name="fillCenter" value="1"/>
-        <enum name="fillEnd" value="2"/>
-        <enum name="fitStart" value="3"/>
-        <enum name="fitCenter" value="4"/>
-        <enum name="fitEnd" value="5"/>
-    </attr>
     <attr format="color|reference" name="scrimBackground"/>
     <attr format="boolean" name="selectionRequired"/>
     <attr format="reference" name="shapeAppearanceCornerExtraLarge"/>
@@ -2015,11 +2003,15 @@
     <string name="camera_diagnostics_refresh">Refresh</string>
     <string name="camera_diagnostics_subtitle">Direct Camera2 report: capabilities, resolutions, FPS, sensor, focus, stabilization, and high-speed support.</string>
     <string name="camera_diagnostics_title">Camera Diagnostics</string>
+    <string name="camera_mode_high_speed">High-Speed Preview Test Mode</string>
+    <string name="camera_mode_stable">Stable Tracking Mode</string>
+    <string name="camera_mode_title">Camera Mode</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string name="control_title">Camera Controls</string>
+    <string name="debug_waiting">Camera debug: waiting for session...</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
   </string>
@@ -2162,6 +2154,7 @@
   </string>
     <string description="Content description for the X button to clear text [CHAR_LIMIT=NONE]" name="searchview_clear_text_content_description">Clear text</string>
     <string description="Content description for the navigation button to return to the previous screen [CHAR_LIMIT=NONE]" name="searchview_navigation_content_description">Back</string>
+    <string name="show_candidates_label">Show Candidate Dots</string>
     <string name="shutter_default">Shutter: Auto</string>
     <string description="Title of the side sheet&apos;s accessibility pane that is spoken by TalkBack when the side sheet appears on screen. [CHAR_LIMIT=NONE]" name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string name="side_sheet_behavior" translatable="false">com.google.android.material.sidesheet.SideSheetBehavior</string>
@@ -12564,10 +12557,6 @@
     <declare-styleable name="PopupWindowBackgroundState">
         
         <attr format="boolean" name="state_above_anchor"/>
-    </declare-styleable>
-    <declare-styleable name="PreviewView">
-        <attr name="scaleType"/>
-        <attr name="implementationMode"/>
     </declare-styleable>
     <declare-styleable name="PropertySet">
         

@@ -14,7 +14,11 @@
     <string name="camera_diagnostics_refresh">Refresh</string>
     <string name="camera_diagnostics_subtitle">Direct Camera2 report: capabilities, resolutions, FPS, sensor, focus, stabilization, and high-speed support.</string>
     <string name="camera_diagnostics_title">Camera Diagnostics</string>
+    <string name="camera_mode_high_speed">High-Speed Preview Test Mode</string>
+    <string name="camera_mode_stable">Stable Tracking Mode</string>
+    <string name="camera_mode_title">Camera Mode</string>
     <string name="control_title">Camera Controls</string>
+    <string name="debug_waiting">Camera debug: waiting for session...</string>
     <string name="exposure_default">Exposure: 0.0 EV</string>
     <string name="focus_default">Focus: Auto</string>
     <string name="high_speed_fps_default">High-speed FPS: Checking support...</string>
@@ -30,6 +34,7 @@
     <string name="profile_orange">Orange</string>
     <string name="profile_white">White</string>
     <string name="reset_pro_label">Reset Auto Look</string>
+    <string name="show_candidates_label">Show Candidate Dots</string>
     <string name="shutter_default">Shutter: Auto</string>
     <string name="status_ball_found">Ball locked</string>
     <string name="status_no_ball">Scanning for ball...</string>

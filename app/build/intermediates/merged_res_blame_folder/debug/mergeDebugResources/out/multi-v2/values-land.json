@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.tabletennistracker.app-mergeDebugResources-36:/values-land/values-land.xml",
+            "outputFile": "com.example.tabletennistracker.app-mergeDebugResources-31:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\tp732\\.gradle\\caches\\transforms-4\\2031bd39e98aaca4ee823fb81047ad51\\transformed\\appcompat-1.7.0\\res\\values-land\\values-land.xml",

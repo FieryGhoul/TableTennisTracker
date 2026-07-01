@@ -2,6 +2,7 @@
 package com.example.tabletennistracker.databinding;
 
 import android.view.LayoutInflater;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -12,7 +13,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.camera.view.PreviewView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
@@ -40,10 +40,19 @@ public final class ActivityMainBinding implements ViewBinding {
   public final FrameLayout cameraContainer;
 
   @NonNull
+  public final RadioGroup cameraModeGroup;
+
+  @NonNull
+  public final TextView cameraModeTitle;
+
+  @NonNull
   public final MaterialCardView controlCard;
 
   @NonNull
   public final TextView controlTitleText;
+
+  @NonNull
+  public final TextView debugText;
 
   @NonNull
   public final MaterialCardView diagnosticCard;
@@ -85,10 +94,16 @@ public final class ActivityMainBinding implements ViewBinding {
   public final MaterialSwitch manualWhiteBalanceSwitch;
 
   @NonNull
+  public final RadioButton modeHighSpeedRadio;
+
+  @NonNull
+  public final RadioButton modeStableRadio;
+
+  @NonNull
   public final BallTrackingOverlay overlayView;
 
   @NonNull
-  public final PreviewView previewView;
+  public final TextureView previewTextureView;
 
   @NonNull
   public final RadioButton profileAutoRadio;
@@ -104,6 +119,9 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public final MaterialButton resetProButton;
+
+  @NonNull
+  public final MaterialSwitch showCandidatesSwitch;
 
   @NonNull
   public final TextView shutterLabel;
@@ -137,17 +155,20 @@ public final class ActivityMainBinding implements ViewBinding {
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
       @NonNull RadioGroup ballProfileGroup, @NonNull TextView ballProfileTitle,
-      @NonNull FrameLayout cameraContainer, @NonNull MaterialCardView controlCard,
-      @NonNull TextView controlTitleText, @NonNull MaterialCardView diagnosticCard,
-      @NonNull LinearLayout diagnosticContent, @NonNull NestedScrollView diagnosticScroll,
-      @NonNull TextView diagnosticSummaryText, @NonNull TextView exposureLabel,
-      @NonNull SeekBar exposureSeekBar, @NonNull TextView focusLabel, @NonNull SeekBar focusSeekBar,
-      @NonNull TextView isoLabel, @NonNull SeekBar isoSeekBar,
-      @NonNull MaterialSwitch manualExposureSwitch, @NonNull MaterialSwitch manualFocusSwitch,
-      @NonNull MaterialSwitch manualWhiteBalanceSwitch, @NonNull BallTrackingOverlay overlayView,
-      @NonNull PreviewView previewView, @NonNull RadioButton profileAutoRadio,
-      @NonNull RadioButton profileOrangeRadio, @NonNull RadioButton profileWhiteRadio,
-      @NonNull MaterialButton refreshDiagnosticsButton, @NonNull MaterialButton resetProButton,
+      @NonNull FrameLayout cameraContainer, @NonNull RadioGroup cameraModeGroup,
+      @NonNull TextView cameraModeTitle, @NonNull MaterialCardView controlCard,
+      @NonNull TextView controlTitleText, @NonNull TextView debugText,
+      @NonNull MaterialCardView diagnosticCard, @NonNull LinearLayout diagnosticContent,
+      @NonNull NestedScrollView diagnosticScroll, @NonNull TextView diagnosticSummaryText,
+      @NonNull TextView exposureLabel, @NonNull SeekBar exposureSeekBar,
+      @NonNull TextView focusLabel, @NonNull SeekBar focusSeekBar, @NonNull TextView isoLabel,
+      @NonNull SeekBar isoSeekBar, @NonNull MaterialSwitch manualExposureSwitch,
+      @NonNull MaterialSwitch manualFocusSwitch, @NonNull MaterialSwitch manualWhiteBalanceSwitch,
+      @NonNull RadioButton modeHighSpeedRadio, @NonNull RadioButton modeStableRadio,
+      @NonNull BallTrackingOverlay overlayView, @NonNull TextureView previewTextureView,
+      @NonNull RadioButton profileAutoRadio, @NonNull RadioButton profileOrangeRadio,
+      @NonNull RadioButton profileWhiteRadio, @NonNull MaterialButton refreshDiagnosticsButton,
+      @NonNull MaterialButton resetProButton, @NonNull MaterialSwitch showCandidatesSwitch,
       @NonNull TextView shutterLabel, @NonNull SeekBar shutterSeekBar, @NonNull TextView statusText,
       @NonNull MaterialButton toggleControlsButton, @NonNull MaterialButton toggleDiagnosticsButton,
       @NonNull MaterialSwitch torchSwitch, @NonNull TextView warmthLabel,
@@ -156,8 +177,11 @@ public final class ActivityMainBinding implements ViewBinding {
     this.ballProfileGroup = ballProfileGroup;
     this.ballProfileTitle = ballProfileTitle;
     this.cameraContainer = cameraContainer;
+    this.cameraModeGroup = cameraModeGroup;
+    this.cameraModeTitle = cameraModeTitle;
     this.controlCard = controlCard;
     this.controlTitleText = controlTitleText;
+    this.debugText = debugText;
     this.diagnosticCard = diagnosticCard;
     this.diagnosticContent = diagnosticContent;
     this.diagnosticScroll = diagnosticScroll;
@@ -171,13 +195,16 @@ public final class ActivityMainBinding implements ViewBinding {
     this.manualExposureSwitch = manualExposureSwitch;
     this.manualFocusSwitch = manualFocusSwitch;
     this.manualWhiteBalanceSwitch = manualWhiteBalanceSwitch;
+    this.modeHighSpeedRadio = modeHighSpeedRadio;
+    this.modeStableRadio = modeStableRadio;
     this.overlayView = overlayView;
-    this.previewView = previewView;
+    this.previewTextureView = previewTextureView;
     this.profileAutoRadio = profileAutoRadio;
     this.profileOrangeRadio = profileOrangeRadio;
     this.profileWhiteRadio = profileWhiteRadio;
     this.refreshDiagnosticsButton = refreshDiagnosticsButton;
     this.resetProButton = resetProButton;
+    this.showCandidatesSwitch = showCandidatesSwitch;
     this.shutterLabel = shutterLabel;
     this.shutterSeekBar = shutterSeekBar;
     this.statusText = statusText;
@@ -235,6 +262,18 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cameraModeGroup;
+      RadioGroup cameraModeGroup = ViewBindings.findChildViewById(rootView, id);
+      if (cameraModeGroup == null) {
+        break missingId;
+      }
+
+      id = R.id.cameraModeTitle;
+      TextView cameraModeTitle = ViewBindings.findChildViewById(rootView, id);
+      if (cameraModeTitle == null) {
+        break missingId;
+      }
+
       id = R.id.controlCard;
       MaterialCardView controlCard = ViewBindings.findChildViewById(rootView, id);
       if (controlCard == null) {
@@ -244,6 +283,12 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.controlTitleText;
       TextView controlTitleText = ViewBindings.findChildViewById(rootView, id);
       if (controlTitleText == null) {
+        break missingId;
+      }
+
+      id = R.id.debugText;
+      TextView debugText = ViewBindings.findChildViewById(rootView, id);
+      if (debugText == null) {
         break missingId;
       }
 
@@ -325,15 +370,27 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.modeHighSpeedRadio;
+      RadioButton modeHighSpeedRadio = ViewBindings.findChildViewById(rootView, id);
+      if (modeHighSpeedRadio == null) {
+        break missingId;
+      }
+
+      id = R.id.modeStableRadio;
+      RadioButton modeStableRadio = ViewBindings.findChildViewById(rootView, id);
+      if (modeStableRadio == null) {
+        break missingId;
+      }
+
       id = R.id.overlayView;
       BallTrackingOverlay overlayView = ViewBindings.findChildViewById(rootView, id);
       if (overlayView == null) {
         break missingId;
       }
 
-      id = R.id.previewView;
-      PreviewView previewView = ViewBindings.findChildViewById(rootView, id);
-      if (previewView == null) {
+      id = R.id.previewTextureView;
+      TextureView previewTextureView = ViewBindings.findChildViewById(rootView, id);
+      if (previewTextureView == null) {
         break missingId;
       }
 
@@ -364,6 +421,12 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.resetProButton;
       MaterialButton resetProButton = ViewBindings.findChildViewById(rootView, id);
       if (resetProButton == null) {
+        break missingId;
+      }
+
+      id = R.id.showCandidatesSwitch;
+      MaterialSwitch showCandidatesSwitch = ViewBindings.findChildViewById(rootView, id);
+      if (showCandidatesSwitch == null) {
         break missingId;
       }
 
@@ -428,13 +491,14 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, ballProfileGroup,
-          ballProfileTitle, cameraContainer, controlCard, controlTitleText, diagnosticCard,
-          diagnosticContent, diagnosticScroll, diagnosticSummaryText, exposureLabel,
-          exposureSeekBar, focusLabel, focusSeekBar, isoLabel, isoSeekBar, manualExposureSwitch,
-          manualFocusSwitch, manualWhiteBalanceSwitch, overlayView, previewView, profileAutoRadio,
+          ballProfileTitle, cameraContainer, cameraModeGroup, cameraModeTitle, controlCard,
+          controlTitleText, debugText, diagnosticCard, diagnosticContent, diagnosticScroll,
+          diagnosticSummaryText, exposureLabel, exposureSeekBar, focusLabel, focusSeekBar, isoLabel,
+          isoSeekBar, manualExposureSwitch, manualFocusSwitch, manualWhiteBalanceSwitch,
+          modeHighSpeedRadio, modeStableRadio, overlayView, previewTextureView, profileAutoRadio,
           profileOrangeRadio, profileWhiteRadio, refreshDiagnosticsButton, resetProButton,
-          shutterLabel, shutterSeekBar, statusText, toggleControlsButton, toggleDiagnosticsButton,
-          torchSwitch, warmthLabel, warmthSeekBar, zoomLabel, zoomSeekBar);
+          showCandidatesSwitch, shutterLabel, shutterSeekBar, statusText, toggleControlsButton,
+          toggleDiagnosticsButton, torchSwitch, warmthLabel, warmthSeekBar, zoomLabel, zoomSeekBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

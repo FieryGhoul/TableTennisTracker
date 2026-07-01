@@ -93,8 +93,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/diagnosticCard">
 
-        <androidx.camera.view.PreviewView
-            android:id="@+id/previewView"
+        <TextureView
+            android:id="@+id/previewTextureView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:keepScreenOn="true" />
@@ -116,6 +116,19 @@
             android:text="@string/status_waiting"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/debugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="16dp"
+            android:background="@drawable/status_chip_bg"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:text="@string/debug_waiting"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
     </FrameLayout>
 
     <com.google.android.material.card.MaterialCardView
@@ -160,6 +173,38 @@
                     android:text="@string/camera_controls_collapse" />
 
                 <TextView
+                    android:id="@+id/cameraModeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/camera_mode_title"
+                    android:textColor="@color/text_muted" />
+
+                <RadioGroup
+                    android:id="@+id/cameraModeGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/modeStableRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/camera_mode_stable"
+                        android:textColor="@android:color/white" />
+
+                    <RadioButton
+                        android:id="@+id/modeHighSpeedRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/camera_mode_high_speed"
+                        android:textColor="@android:color/white" />
+                </RadioGroup>
+
+                <TextView
                     android:id="@+id/ballProfileTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -198,6 +243,14 @@
                         android:text="@string/profile_white"
                         android:textColor="@android:color/white" />
                 </RadioGroup>
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/showCandidatesSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/show_candidates_label"
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/exposureLabel"
